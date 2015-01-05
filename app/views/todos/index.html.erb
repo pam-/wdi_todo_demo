@@ -1,5 +1,5 @@
 <ul>
 	<% @todos.each do |todo| %>
-	<li> <%= todo.body %> <span> <%= todo.created_at.to_s %>  </span> </li>
+	<li> <%= todo.body %> <span> written <%= time_ago_in_words(todo.created_at) %> ago </span> </li>
 	<% end %> 
 </ul>

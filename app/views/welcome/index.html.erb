@@ -1,14 +1,14 @@
-<h1> Hello world! It is <%= @date %> </h1>
+<h1> Hello world! <span>It is <%= @date %> </span></h1>
 <% if @friday %>
-	<p> It is Friday!!! </p>
+	<h2> It is Friday!!! </h2>
 <% else %>  
-	<p> Not Friday....yet! </p>
+	<h2> Not Friday just yet. It's only <%= @today %> :( </h2>
 <% end %> 
 
-<h2> Today's todos </h2>
+<h3> Today's todos </h2>
 <ul>
 <% @todos.each do |todo| %>
-	<li><%= todo.body %> <%= link_to 'x', todo_path(todo), method: 'delete' %> <%= link_to 'edit', edit_todo_path(todo) %>  </li>
+	<li><%= todo.body %> <span> <%= link_to 'x', todo_path(todo), method: 'delete' %> <%= link_to 'edit', edit_todo_path(todo) %> </span> </li>
 <% end %>  
 </ul>
 <button><a href="/todos/new">Add task</a></button>
