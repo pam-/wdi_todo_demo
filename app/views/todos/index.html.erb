@@ -1,0 +1,5 @@
+<ul>
+	<% @todos.each do |todo| %>
+	<li> <%= todo.body %> <span> <%= todo.created_at.to_s %>  </span> </li>
+	<% end %> 
+</ul>

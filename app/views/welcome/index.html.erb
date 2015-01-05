@@ -1,0 +1,14 @@
+<h1> Hello world! It is <%= @date %> </h1>
+<% if @friday %>
+	<p> It is Friday!!! </p>
+<% else %>  
+	<p> Not Friday....yet! </p>
+<% end %> 
+
+<h2> Today's todos </h2>
+<ul>
+<% @todos.each do |todo| %>
+	<li><%= todo.body %> <%= link_to 'x', todo_path(todo), method: 'delete' %> <%= link_to 'edit', edit_todo_path(todo) %>  </li>
+<% end %>  
+</ul>
+<button><a href="/todos/new">Add task</a></button>
